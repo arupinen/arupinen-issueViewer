@@ -1,3 +1,6 @@
+/**
+ * Default react initialized test file - not currently implemented
+ */
 package com.java.issueViewer;
 
 import org.junit.jupiter.api.Test;

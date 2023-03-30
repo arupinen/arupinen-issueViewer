@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
+import IssuesTable from './IssuesTable';
 // import $ from 'jquery';
 
-// const BASE_URL = "http://localhost:8080/";
-const ISSUES_ENDPOINT = 'http://localhost:8080/api/issues';
-const DEFAULT_REPO = "https://github.com/kubernetes/kubernetes/";
+const BASE_URL = 'http://localhost:8080/';
+const ISSUES_ENDPOINT = BASE_URL + 'api/issues';
+const DEFAULT_REPO = 'https://github.com/kubernetes/kubernetes/';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      this.setState({issues: data});
     });
   }
 
@@ -40,21 +42,7 @@ class App extends React.Component {
     const {issues} = this.state;
     console.log(issues);
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <IssuesTable props={issues}/>
     );
   }
 }
