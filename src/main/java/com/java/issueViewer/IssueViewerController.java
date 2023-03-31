@@ -20,7 +20,7 @@ import com.java.issueViewer.objects.IssueResponse;
 @RequestMapping("/api")
 public class IssueViewerController {
 
-    @PostMapping(value  = "/issues", produces = {"application/json"})
+    @PostMapping(value = "/issues", produces = {"application/json"})
     public IssueResponse getIssues(@RequestBody IssueRequest request) {
         try {
             if (!validateUrl(request.getUrl())) {
@@ -32,7 +32,7 @@ public class IssueViewerController {
         } catch(Exception e) {
             // we should either log an error, or otherwise handle when git is down or a bad URL was passed
         }
-        return new IssueResponse(new Issue[0], "Something went wronh; please try again", "ERROR");
+        return new IssueResponse(new Issue[0], "Something went wrong; please try again", "ERROR");
     }
 
     // We will want to validate that the URL is a valid gitHub API link, ideally with a regex expression
