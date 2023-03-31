@@ -3,7 +3,6 @@ package com.java.issueViewer.objects;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -56,6 +55,9 @@ import lombok.NoArgsConstructor;
 public class Issue {
     @JsonProperty("url")
     private String url;
+
+    @JsonProperty("html_url")
+    private String html_url;
 
     @JsonProperty("repository_url")
     private String repository_url;

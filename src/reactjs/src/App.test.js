@@ -1,5 +1,5 @@
 /**
- * Default react initialized test file - not currently implement
+ * Default react initialized test file - not currently implemented
  */
 import { render, screen } from '@testing-library/react';
 import App from './App';
