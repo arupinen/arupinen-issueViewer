@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  reactjs:
+    build: ./reactjs
+    volumes:
+      - ./reactjs:/code
+    ports:
+      - "3000:3000"
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/code
+    ports:
+      - "8080:8080"

@@ -1,0 +1,10 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "backend\\src",
+        "backend\\src\\main\\java",
+        "backend\\src\\main\\resources",
+        "backend\\target\\classes"
+    ],
+    "java.project.outputPath": "backend\\target\\classes"
+}

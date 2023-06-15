@@ -39,7 +39,8 @@ class App extends React.Component {
         this.setState({issues: data.issues, errorMessage: null});
       }
 
-    });
+    })
+    .catch((e) => this.setState({errorMessage: e.message}));
   }
 
   // function to use the form elements to re-fetch issues with params/new url
@@ -77,7 +78,7 @@ class App extends React.Component {
           </select>
           <button type="submit">Reload</button>
         </form>
-        <div>{errorMessage}</div>
+        <div className='errorMessage'>{errorMessage}</div>
         <IssuesTable rows={issues}/>
       </div>
     );
